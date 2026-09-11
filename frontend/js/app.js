@@ -2,7 +2,7 @@
 // and the processed-document detail view. Connects to the deployed
 // backend API (set API_BASE_URL below once deployed).
 
-const API_BASE_URL = "http://localhost:8000/api"; // TODO: replace with deployed backend URL
+const API_BASE_URL = "https://document-intelligence-platform-regp.onrender.com/api";
 
 const apiStatus = document.getElementById("api-status");
 const uploadForm = document.getElementById("upload-form");
