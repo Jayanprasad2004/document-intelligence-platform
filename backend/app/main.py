@@ -5,6 +5,7 @@ exception handlers and CORS. Run with:
 """
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
 
 from app.api.routes import router
 from app.core.config import settings
@@ -27,6 +28,16 @@ app.add_middleware(
 
 register_exception_handlers(app)
 app.include_router(router, prefix="/api")
+
+
+@app.get("/", include_in_schema=False)
+def root():
+    # This is an API-only backend -- there is nothing meaningful to
+    # show at the bare root. Rather than leave visitors (evaluators,
+    # anyone poking at the deployed URL out of curiosity) staring at a
+    # raw {"detail":"Not Found"} 404, send them straight to the
+    # interactive API docs, which is the actual useful entry point.
+    return RedirectResponse(url="/docs")
 
 
 @app.on_event("startup")
