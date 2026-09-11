@@ -1,0 +1,95 @@
+{
+  "document_name": "batch1-1109.jpg",
+  "document_type": "invoice",
+  "processing_status": "PASS",
+  "overall_confidence": null,
+  "file_validation": {
+    "file_type": "image/jpeg",
+    "is_supported": true,
+    "is_readable": true,
+    "page_count": 1,
+    "status": "PASS"
+  },
+  "extracted_data": {
+    "invoice_number": {
+      "value": "94404257",
+      "confidence": 0.98,
+      "page_number": 1,
+      "source_text": "Invoice no: 94404257"
+    },
+    "invoice_date": {
+      "value": "2013-03-07",
+      "confidence": 0.95,
+      "page_number": 1,
+      "source_text": "Date of issue: 07/03/2013"
+    },
+    "vendor_name": {
+      "value": "Cruz PLC",
+      "confidence": 0.9,
+      "page_number": 1,
+      "source_text": "Seller: Cruz PLC"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": 0.8,
+      "page_number": 1,
+      "source_text": "$"
+    },
+    "subtotal": {
+      "value": 126.27,
+      "confidence": 0.9,
+      "page_number": 1,
+      "source_text": "Net worth $126,27"
+    },
+    "tax_amount": {
+      "value": 12.63,
+      "confidence": 0.9,
+      "page_number": 1,
+      "source_text": "VAT $12,63"
+    },
+    "discount": {
+      "value": null,
+      "confidence": null,
+      "page_number": null,
+      "source_text": null
+    },
+    "total_amount": {
+      "value": 138.9,
+      "confidence": 0.95,
+      "page_number": 1,
+      "source_text": "Gross worth $138,90"
+    },
+    "line_items": [
+      {
+        "description": "B0028NAO6C Shoeless Joe",
+        "quantity": 5,
+        "unit_price": 3.49,
+        "amount": 19.2
+      }
+    ]
+  },
+  "validation": {
+    "checks": [
+      {
+        "name": "invoice_total_check",
+        "formula": "subtotal + tax_amount - discount",
+        "operands": {
+          "subtotal": 126.27,
+          "tax_amount": 12.63,
+          "discount": 0.0
+        },
+        "calculated_value": 138.9,
+        "reported_value": 138.9,
+        "variance": 0.0,
+        "status": "PASS"
+      }
+    ],
+    "overall_status": "PASS",
+    "issues": []
+  },
+  "processing_metadata": {
+    "ocr_used": true,
+    "processed_at": "2026-09-11T07:11:17.082893+00:00",
+    "processing_time_ms": 2368
+  }
+}

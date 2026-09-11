@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <h1>Document Intelligence</h1>
+      <span class="topbar-status" id="api-status">checking API&hellip;</span>
+    </header>
+
+    <section class="panel">
+      <h2>Process a document</h2>
+
+      <form id="upload-form">
+        <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose or drop a file to upload">
+          <svg class="dropzone-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="M14 4h14l8 8v28a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M28 4v8h8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M17 26l5-5 4 4 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p class="dropzone-label" id="dropzone-label">Drop a file here, or click to browse</p>
+          <p class="dropzone-hint">PDF, JPG, or PNG &middot; up to 3 pages</p>
+          <input type="file" id="file" name="file" accept=".pdf,.jpg,.jpeg,.png" required />
+        </div>
+
+        <div class="form-row">
+          <label for="document_type">Document type</label>
+          <select id="document_type" name="document_type" required>
+            <option value="invoice">Invoice</option>
+            <option value="balance_sheet">Balance sheet</option>
+            <option value="profit_loss">Profit &amp; loss statement</option>
+            <option value="cash_flow">Cash flow statement</option>
+          </select>
+          <button type="submit" id="submit-button">Process document</button>
+        </div>
+      </form>
+
+      <p class="status-line" id="upload-status"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Processed documents</h2>
+      <table class="ledger">
+        <thead>
+          <tr><th>Document</th><th>Type</th><th>Status</th><th>Processed</th></tr>
+        </thead>
+        <tbody id="dashboard-body">
+          <tr><td colspan="4" class="empty-state">Loading&hellip;</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel" id="detail-panel" hidden>
+      <h2 id="detail-title"></h2>
+
+      <div class="detail-grid">
+        <div>
+          <h3>Extracted fields</h3>
+          <div id="detail-fields"></div>
+        </div>
+        <div>
+          <h3>Financial validation</h3>
+          <div id="detail-validation"></div>
+        </div>
+      </div>
+
+      <div id="detail-line-items"></div>
+
+      <details class="raw-json">
+        <summary>Raw JSON</summary>
+        <pre id="detail-raw-json"></pre>
+      </details>
+    </section>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
