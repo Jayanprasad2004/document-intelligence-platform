@@ -10,7 +10,7 @@ and financial statements (AI Engineer Internship case study).
 | **Public GitHub repository** | [`https://github.com/Jayanprasad2004/document-intelligence-platform`](https://github.com/Jayanprasad2004/document-intelligence-platform) |
 | **Frontend (live app)** | [`https://document-intelligence-platform-frontend.onrender.com`](https://document-intelligence-platform-frontend.onrender.com) |
 | **Backend API** | [`https://document-intelligence-platform-regp.onrender.com`](https://document-intelligence-platform-regp.onrender.com) |
-| **Swagger / OpenAPI docs** | [`https://document-intelligence-platform-regp.onrender.com`](https://document-intelligence-platform-regp.onrender.com) |
+| **Swagger / OpenAPI docs** | [`https://document-intelligence-platform-regp.onrender.com/docs`](https://document-intelligence-platform-regp.onrender.com/docs) |
 
 > The backend is on Render's free tier and spins down after 15 minutes of
 > inactivity — the first request after idle time takes 30-60 seconds to wake
